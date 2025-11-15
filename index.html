@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 카카오톡 공유용 메타 태그 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="마태를 부르신 예수님 - 왕의 명령">
+    <meta property="og:description" content="'나를 따르라' - 단 네 글자가 마태의 인생을 완전히 바꿨습니다. 이주민과 한국인 모두를 위한 은혜로운 메시지 (한국어•English•Tiếng Việt•සිංහල)">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=1200&h=630&fit=crop">
+    
+    <title>마태를 부르신 예수님 - 왕의 명령</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans:wght@300;400;500;700;900&family=Noto+Sans+Vietnamese:wght@300;400;500;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* 언어 선택 버튼 */
+        .lang-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            max-width: 320px;
+        }
+        
+        .lang-btn {
+            padding: 10px 16px;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .lang-btn.active {
+            background: #fbbf24;
+            color: #0f172a;
+        }
+        
+        .lang-btn:not(.active) {
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+        
+        .lang-btn:not(.active):hover {
+            background: #334155;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .crown-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            animation: pulse 3s infinite;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #fef3c7, #fbbf24, #fef3c7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #fcd34d;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        
+        .verse {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #cbd5e1;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .reference {
+            font-size: 1.25rem;
+            color: #fbbf24;
+            margin-top: 20px;
+        }
+        
+        .scroll-btn {
+            margin-top: 60px;
+            background: #fbbf24;
+            color: #0f172a;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        /* Section */
+        section {
+            margin-bottom: 100px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #fcd34d;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: #fbbf24;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            color: #cbd5e1;
+        }
+        
+        /* Cards */
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid #334155;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        /* Text */
+        p {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            background: rgba(15, 23, 42, 0.5);
+            border-left: 4px solid #fbbf24;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .highlight p {
+            color: #fcd34d;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            font-size: 1.125rem;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        /* Special sections */
+        .comparison {
+            background: rgba(185, 28, 28, 0.1);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .comparison.positive {
+            background: rgba(21, 128, 61, 0.1);
+            border-left: 4px solid #10b981;
+        }
+        
+        .comparison h3 {
+            color: #ef4444;
+        }
+        
+        .comparison.positive h3 {
+            color: #10b981;
+        }
+        
+        /* CTA Section */
+        .cta-box {
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+            border: 4px solid #fbbf24;
+            text-align: center;
+            padding: 50px 40px;
+        }
+        
+        .cta-box h3 {
+            color: white;
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+        
+        .cta-box p {
+            color: #fef3c7;
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        }
+        
+        /* Prayer */
+        .prayer {
+            background: rgba(30, 41, 59, 0.3);
+            font-style: italic;
+            line-height: 2;
+        }
+        
+        .prayer p {
+            margin-bottom: 15px;
+        }
+        
+        .prayer .amen {
+            color: #fbbf24;
+            font-weight: 700;
+            margin-top: 30px;
+            font-size: 1.25rem;
+        }
+        
+        /* Questions */
+        .question-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            border: 1px solid #334155;
+            transition: border-color 0.3s;
+        }
+        
+        .question-box:hover {
+            border-color: #fbbf24;
+        }
+        
+        .question-num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fbbf24;
+            flex-shrink: 0;
+        }
+        
+        .question-text {
+            flex: 1;
+            margin: 0;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #020617;
+            border-top: 1px solid #1e293b;
+        }
+        
+        footer p {
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .lang-selector {
+                max-width: calc(100% - 40px);
+                top: 10px;
+                right: 10px;
+            }
+            
+            .lang-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .container {
+                padding: 60px 15px;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            section {
+                margin-bottom: 60px;
+            }
+        }
+        
+        /* Content Visibility */
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 언어 선택 -->
+<div class="lang-selector">
+    <button class="lang-btn active" onclick="setLanguage('ko')">한국어</button>
+    <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    <button class="lang-btn" onclick="setLanguage('vi')">Tiếng Việt</button>
+    <button class="lang-btn" onclick="setLanguage('si')">සිංහල</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="crown-icon">👑</div>
+        <h1 id="hero-title">마태를 부르신 예수님</h1>
+        <p class="subtitle" id="hero-subtitle">왕의 명령</p>
+        <p class="verse" id="hero-verse">예수께서 마태라 하는 사람이 세관에 앉아 있는 것을 보시고 이르시되 나를 따르라 하시니 일어나 따르니라</p>
+        <p class="reference" id="hero-reference">마태복음 9:9</p>
+        <button class="scroll-btn" onclick="scrollToContent()">▼</button>
+    </div>
+</div>
+
+<!-- 한국어 콘텐츠 -->
+<div id="content-ko" class="lang-content active">
+    <div class="container">
+        <!-- Section 1 -->
+        <section>
+            <div class="section-header">
+                <div class="section-icon">❤️</div>
+                <h2>외로운 사람</h2>
+            </div>
+            
+            <div class="card">
+                <p>여러분은 혹시 이런 경험이 있으십니까?</p>
+                <p>교실에서 점심시간이 되었습니다. 모두 짝을 지어 밥을 먹으러 갑니다. 그런데 나만 혼자입니다. 아무도 나를 부르지 않습니다. 그냥 혼자 밥을 먹습니다.</p>
+                <p>또는 새로운 학교에 전학을 갔습니다. 아무도 나를 모릅니다. 나도 아무도 모릅니다. 첫날, 쉬는 시간에 혼자 서 있습니다. 마음이 너무 외롭습니다.</p>
+                <p>이주민 여러분은 더 잘 아실 겁니다. 낯선 나라에 왔습니다. 말도 잘 안 통합니다. 친구도 없습니다. 가끔 사람들이 나를 이상하게 봅니다. '외국인이네' 하는 눈빛입니다. 그럴 때 마음이 얼마나 아픕니까?</p>
+                
+                <div class="highlight">
+                    <p>오늘 우리가 만날 마태는 그런 사람이었습니다. 아니, 그보다 훨씬 더 외로운 사람이었습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+            <div class="section-header">
+                <div class="section-icon">💼</div>
+                <h2>세관에 앉아 있던 마태</h2>
+                <p class="section-subtitle">아무도 사랑하지 않는 사람</p>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3>마태의 직업</h3>
+                    <p>마태는 세리였습니다. 세리는 로마를 위해 같은 민족에게서 세금을 걷는 사람이었습니다. 사람들은 세리를 '민족 배신자'라고 불렀습니다.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>마태의 마음</h3>
+                    <p style="font-style: italic;">"나는 왜 이렇게 사는 걸까? 돈은 많은데 왜 이렇게 외로울까? 하나님도 나를 싫어하실까? 나는 이미 끝난 사람이야..."</p>
+                </div>
+            </div>
+            
+            <div class="card highlight">
+                <p>💡 돈이 많아도 사랑받지 못하면 행복하지 않습니다. 마태는 부자였지만 세상에서 가장 외로운 사람이었습니다.</p>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section>
+            <div class="section-header">
+                <div class="section-icon">👁️</div>
+                <h2>예수님이 마태를 보셨습니다</h2>
+            </div>
+            
+            <div class="card">
+                <p>그날도 마태는 세관에 앉아 있었습니다. 사람들이 지나갑니다. 아무도 마태를 쳐다보지 않습니다. 쳐다봐도 사랑의 눈빛이 아닙니다. 미움의 눈빛입니다.</p>
+                <p style="font-size: 1.5rem; text-align: center; color: #fbbf24; font-weight: 700; margin: 30px 0;">그런데 그날, 예수님이 지나가셨습니다.</p>
+                
+                <div class="grid-2" style="margin-top: 40px;">
+                    <div class="card comparison">
+                        <h3>사람들이 본 것</h3>
+                        <p>저 더러운 세리. 민족 배신자. 죄인.</p>
+                    </div>
+                    
+                    <div class="card comparison positive">
+                        <h3>예수님이 보신 것</h3>
+                        <p>마태. 외롭고 아픈 마음을 가진 사람. 내가 사랑하는 사람. 놀라운 일을 할 수 있는 사람.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" style="background: linear-gradient(135deg, #1e3a8a, #7c3aed); margin-top: 30px;">
+                <p style="text-align: center; font-style: italic; font-size: 1.25rem; color: #ddd6fe;">"사람은 겉모습만 보지만, 하나님은 마음을 보신다."</p>
+                <p style="text-align: center; color: #c4b5fd; margin-top: 15px;">사무엘상 16:7</p>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section>
+            <div class="section-header">
+                <div class="section-icon">👑</div>
+                <h2>"나를 따르라" - 왕의 명령</h2>
+            </div>
+            
+            <div class="card cta-box">
+                <h3>"나를 따르라"</h3>
+                <p>단 네 글자가 마태의 인생을 완전히 바꿨습니다</p>
+            </div>
+            
+            <div class="grid-3" style="margin: 40px 0;">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">⚡</div>
+                    <h3>병을 고치시는 왕</h3>
+                    <p>중풍병자를 일으키심</p>
+                </div>
+                
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🌊</div>
+                    <h3>폭풍을 멈추시는 왕</h3>
+                    <p>바람과 파도를 잔잔케 하심</p>
+                </div>
+                
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">✨</div>
+                    <h3>죽은 자를 살리시는 왕</h3>
+                    <p>나사로를 살리심</p>
+                </div>
+            </div>
+            
+            <div class="card" style="border: 2px solid #fbbf24;">
+                <h3 style="text-align: center;">왕의 말씀에는 능력이 있습니다</h3>
+                <p style="text-align: center;">예수님이 '따르라'고 하시면, 따를 수 있는 힘도 함께 주십니다.</p>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section>
+            <div class="section-header">
+                <div class="section-icon">✨</div>
+                <h2>"일어나 따르니라"</h2>
+                <p class="section-subtitle">기적 같은 순종</p>
+            </div>
+            
+            <div class="card">
+                <p style="font-size: 1.5rem; text-align: center; color: #fbbf24; font-weight: 700;">마태는 즉시 일어났습니다</p>
+                
+                <div style="margin: 30px 0;">
+                    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
+                        <span style="font-size: 2rem;">❌</span>
+                        <p style="margin: 0;">잠깐만요, 생각해볼게요.</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
+                        <span style="font-size: 2rem;">❌</span>
+                        <p style="margin: 0;">내일 갈게요. 오늘은 일이 많아서요.</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
+                        <span style="font-size: 2rem;">❌</span>
+                        <p style="margin: 0;">돈은 어떻게 하죠?</p>
+                    </div>
+                    <div style="display: flex; gap: 15px; align-items: center;">
+                        <span style="font-size: 2rem; color: #10b981;">✓</span>
+                        <p style="margin: 0; color: #10b981; font-weight: 700;">즉시 일어나 따랐습니다!</p>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <p style="text-align: center;">마태는 혼자 힘으로 일어선 게 아닙니다. 예수님의 말씀이 마태를 일으켜 세웠습니다.</p>
+                </div>
+            </div>
+            
+            <div class="grid-2" style="margin-top: 30px;">
+                <div class="card comparison">
+                    <h3>마태가 버린 것</h3>
+                    <ul>
+                        <li>매일 들어오는 돈</li>
+                        <li>안정적인 직업</li>
+                        <li>편한 생활</li>
+                    </ul>
+                </div>
+                
+                <div class="card comparison positive">
+                    <h3>마태가 얻은 것</h3>
+                    <ul>
+                        <li>예수님의 제자</li>
+                        <li>12명의 친구</li>
+                        <li>마태복음 저자</li>
+                        <li>진짜 행복</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section>
+            <div class="section-header">
+                <div class="section-icon">👥</div>
+                <h2>친구들을 초대한 마태</h2>
+            </div>
+            
+            <div class="card">
+                <p>마태는 집으로 돌아가서 큰 잔치를 열었습니다. (마태복음 9:10)</p>
+                
+                <div style="background: rgba(126, 34, 206, 0.2); border-radius: 16px; padding: 30px; text-align: center; margin: 30px 0;">
+                    <p style="font-size: 1.5rem; color: #e9d5ff; font-style: italic; margin-bottom: 20px;">"얘들아! 이분이 나를 완전히 바꿔주셨어!"</p>
+                    <p style="font-size: 1.5rem; color: #e9d5ff; font-style: italic;">"너희도 예수님을 만나봐!"</p>
+                </div>
+                
+                <div class="highlight">
+                    <p style="text-align: center;">진짜 변화는 혼자만 좋은 게 아닙니다. 다른 사람들과 나누는 겁니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section>
+            <div class="section-header">
+                <div class="section-icon">🙏</div>
+                <h2>예수님이 여러분을 부르십니다</h2>
+            </div>
+            
+            <div class="card" style="background: linear-gradient(135deg, #1e3a8a, #7c3aed);">
+                <h3>이주민 여러분께</h3>
+                <p>마태처럼 외로우셨습니까? 낯선 땅에서 혼자라고 느끼셨습니까? 예수님이 여러분을 보고 계십니다. 여러분의 이름을 아십니다. 여러분의 아픈 마음을 아십니다.</p>
+            </div>
+            
+            <div class="card" style="background: linear-gradient(135deg, #9f1239, #db2777); margin-top: 30px;">
+                <h3>한국 사람 여러분께</h3>
+                <p>혹시 '나는 안 될 거야', '나는 가치 없어'라고 생각하셨습니까? 학교에서, 직장에서, 외로우셨습니까? 예수님이 여러분을 보고 계십니다. 사랑의 눈으로 바라보고 계십니다.</p>
+            </div>
+            
+            <div class="card cta-box" style="margin-top: 30px;">
+                <div class="crown-icon">👑</div>
+                <h3>"나를 따르라"</h3>
+                <p>예수님은 지금도 여러분을 부르고 계십니다</p>
+            </div>
+            
+            <div class="grid-3" style="margin-top: 40px;">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🙋</div>
+                    <h3>일어나십시오</h3>
+                    <p>망설이지 마십시오</p>
+                </div>
+                
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🚶</div>
+                    <h3>따르십시오</h3>
+                    <p>예수님을 따라가십시오</p>
+                </div>
+                
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">🤝</div>
+                    <h3>나누십시오</h3>
+                    <p>은혜를 나누십시오</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prayer -->
+        <section style="background: linear-gradient(180deg, #0f172a, #020617); padding: 80px 20px; margin: 0 -20px;">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="section-header">
+                    <h2>기도</h2>
+                </div>
+                
+                <div class="card prayer">
+                    <p>사랑하는 예수님,</p>
+                    <p>마태를 부르셨던 것처럼 저희도 부르시니 감사합니다.</p>
+                    <p>저희는 약합니다. 때로 외롭습니다. 때로 두렵습니다.</p>
+                    <p>하지만 예수님의 말씀에는 능력이 있다는 것을 믿습니다.</p>
+                    <p>마태를 일으켜 세우셨던 것처럼 저희도 일으켜 주십시오.</p>
+                    <p>즉시 순종하는 용기를 주십시오.</p>
+                    <p>그리고 받은 은혜를 다른 사람들과 나누게 하십시오.</p>
+                    <p>이주민도, 한국 사람도, 모두 예수님의 사랑을 경험하게 하십시오.</p>
+                    <p class="amen">예수님의 이름으로 기도합니다. 아멘.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questions -->
+        <section>
+            <div class="section-header">
+                <h2>함께 생각해봅시다</h2>
+            </div>
+            
+            <div class="card question-box">
+                <div class="question-num">1</div>
+                <p class="question-text">혹시 지금 마태처럼 외롭거나 힘든 상황에 계십니까? 예수님이 여러분을 보고 계신다는 것을 믿으십니까?</p>
+            </div>
+            
+            <div class="card question-box">
+                <div class="question-num">2</div>
+                <p class="question-text">"나를 따르라"는 예수님의 음성을 들었지만 아직 일어서지 못한 이유는 무엇입니까?</p>
+            </div>
+            
+            <div class="card question-box">
+                <div class="question-num">3</div>
+                <p class="question-text">여러분이 예수님을 소개하고 싶은 친구나 가족이 있습니까? 오늘 그들에게 연락해보시겠습니까?</p>
+            </div>
+            
+            <div class="card question-box">
+                <div class="question-num">4</div>
+                <p class="question-text">마태는 많은 것을 버렸지만 훨씬 더 많은 것을 얻었습니다. 여러분은 무엇을 기대하십니까?</p>
+            </div>
+            
+            <div class="card question-box">
+                <div class="question-num">5</div>
+                <p class="question-text">오늘 이 설교를 듣고 여러분이 실천할 한 가지는 무엇입니까?</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- 영어 콘텐츠 (간략 버전) -->
+<div id="content-en" class="lang-content">
+    <div class="container">
+        <section>
+            <div class="section-header">
+                <h2>Jesus Calls Matthew - The King's Command</h2>
+            </div>
+            <div class="card">
+                <p>This is a story about Matthew, a lonely tax collector whom Jesus called with just four words: "Follow me."</p>
+                <p>Matthew immediately got up and followed Jesus. His life was completely transformed.</p>
+                <div class="highlight">
+                    <p>Jesus is calling you today too. Will you stand up and follow Him?</p>
+                </div>
+            </div>
+        </section>
+        <p style="text-align: center; margin-top: 40px; font-size: 1.25rem;">Full English translation coming soon. For now, please use the Korean version with a translator.</p>
+    </div>
+</div>
+
+<!-- 베트남어 콘텐츠 (간략 버전) -->
+<div id="content-vi" class="lang-content">
+    <div class="container">
+        <section>
+            <div class="section-header">
+                <h2>Chúa Giê-xu Kêu Gọi Ma-thi-ơ - Mệnh Lệnh Của Vua</h2>
+            </div>
+            <div class="card">
+                <p>Đây là câu chuyện về Ma-thi-ơ, một người thu thuế cô đơn mà Chúa Giê-xu đã kêu gọi chỉ bằng bốn chữ: "Hãy theo Ta."</p>
+                <p>Ma-thi-ơ lập tức đứng dậy và đi theo Chúa Giê-xu. Cuộc đời ông đã được biến đổi hoàn toàn.</p>
+                <div class="highlight">
+                    <p>Chúa Giê-xu cũng đang kêu gọi bạn hôm nay. Bạn có đứng dậy và đi theo Ngài không?</p>
+                </div>
+            </div>
+        </section>
+        <p style="text-align: center; margin-top: 40px; font-size: 1.25rem;">Bản dịch tiếng Việt đầy đủ sẽ sớm ra mắt. Hiện tại, vui lòng sử dụng phiên bản tiếng Hàn với công cụ dịch.</p>
+    </div>
+</div>
+
+<!-- 싱할라어 콘텐츠 (간략 버전) -->
+<div id="content-si" class="lang-content">
+    <div class="container">
+        <section>
+            <div class="section-header">
+                <h2>යේසුස් මැතිව්ව කැඳවයි - රජුගේ නියෝගය</h2>
+            </div>
+            <div class="card">
+                <p>මෙය මැතිව් පිළිබඳ කතාවකි, හුදෙකලා බදු එකතුකරුවෙකු වූ ඔහු යේසුස් වචන හතරකින් කැඳවීය: "මා අනුගමනය කරන්න."</p>
+                <p>මැතිව් වහාම නැගිට යේසුස් අනුගමනය කළේය. ඔහුගේ ජීවිතය සම්පූර්ණයෙන්ම වෙනස් විය.</p>
+                <div class="highlight">
+                    <p>යේසුස් අදත් ඔබව කැඳවයි. ඔබ නැගිට ඔහු අනුගමනය කරනවාද?</p>
+                </div>
+            </div>
+        </section>
+        <p style="text-align: center; margin-top: 40px; font-size: 1.25rem;">සම්පූර්ණ සිංහල පරිවර්තනය ළඟදීම පැමිණේ. දැනට, කරුණාකර පරිවර්තන මෙවලමක් සමඟ කොරියානු අනුවාදය භාවිතා කරන්න.</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="crown-icon" style="font-size: 48px; margin-bottom: 20px;">👑</div>
+    <p style="font-size: 1.125rem; color: #94a3b8;">마태를 부르신 예수님 - 왕의 명령</p>
+    <p style="color: #64748b;">마태복음 9:9</p>
+    <p style="color: #475569; font-size: 0.875rem; margin-top: 20px;">4개 언어 지원: 한국어 • English • Tiếng Việt • සිංහල</p>
+</footer>
+
+<script>
+    // 언어 전환 함수
+    function setLanguage(lang) {
+        // 모든 콘텐츠 숨기기
+        document.querySelectorAll('.lang-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // 선택된 언어 콘텐츠 보이기
+        document.getElementById('content-' + lang).classList.add('active');
+        
+        // 버튼 스타일 업데이트
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+        
+        // Hero 섹션 텍스트 업데이트
+        const titles = {
+            ko: {
+                title: '마태를 부르신 예수님',
+                subtitle: '왕의 명령',
+                verse: '예수께서 마태라 하는 사람이 세관에 앉아 있는 것을 보시고 이르시되 나를 따르라 하시니 일어나 따르니라',
+                reference: '마태복음 9:9'
+            },
+            en: {
+                title: 'Jesus Calls Matthew',
+                subtitle: "The King's Command",
+                verse: "As Jesus went on from there, he saw a man named Matthew sitting at the tax collector's booth. 'Follow me,' he told him, and Matthew got up and followed him.",
+                reference: 'Matthew 9:9'
+            },
+            vi: {
+                title: 'Chúa Giê-xu Kêu Gọi Ma-thi-ơ',
+                subtitle: 'Mệnh Lệnh Của Vua',
+                verse: 'Khi Đức Chúa Jêsus đi khỏi đó, Ngài thấy một người tên là Ma-thi-ơ đang ngồi ở trạm thuế. Ngài phán với người: "Hãy theo Ta." Người ấy đứng dậy và đi theo Ngài.',
+                reference: 'Ma-thi-ơ 9:9'
+            },
+            si: {
+                title: 'යේසුස් මැතිව්ව කැඳවයි',
+                subtitle: 'රජුගේ නියෝගය',
+                verse: 'යේසුස් එතැනින් ගමන් කරද්දී, බදු එකතු කිරීමේ ස්ථානයේ මැතිව් නම් මිනිසෙක් වාඩි වී සිටිනු දුටුවේය. ඔහු ඔහුට කීවේය: "මා අනුගමනය කරන්න." ඔහු නැගිට ඔහු අනුගමනය කළේය.',
+                reference: 'මැතිව් 9:9'
+            }
+        };
+        
+        document.getElementById('hero-title').textContent = titles[lang].title;
+        document.getElementById('hero-subtitle').textContent = titles[lang].subtitle;
+        document.getElementById('hero-verse').textContent = titles[lang].verse;
+        document.getElementById('hero-reference').textContent = titles[lang].reference;
+        
+        // 페이지 최상단으로 스크롤
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // 스크롤 함수
+    function scrollToContent() {
+        const firstSection = document.querySelector('.container');
+        firstSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // 페이지 로드 시 애니메이션
+    window.addEventListener('load', function() {
+        document.body.style.opacity = '0';
+        setTimeout(function() {
+            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+</script>
+
+</body>
+</html>
